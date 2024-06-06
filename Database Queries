@@ -1,0 +1,23 @@
+1. Use the excel file as a starting point. Create the same columns that are included in the excel file. This is your database's schema.
+2. Your Primary key is movieID and should be automatically incrementing.    
+>> CREATE TABLE movies(movieID Integer primary key,title text not null, studio text not null, genres text not null, directors          text not null, writers text not null, actors text not null, year Integer, length integer, shortDescription text not null,           mpaRating varchar(2) not null, criticsRating integer not null);
+
+3. Add the movies provided in the excel file and at least 10 of your own.
+# Added 10 provided in the excel and 10 of my own making 20 rows. One Example is given below
+>> insert into movies(title, studio, genres, directors, writers, actors, year, length, shortDescription, mpaRating,                    criticsRating) values('Star Wars: Episode V - The Empire Strikes Back', 'Twentieth Century Fox', 'Action, Adventure, Fantasy',
+   'Irvin Kershner','Leigh Brackett, Lawrence Kasdan, George Lucas', 'Mark Hamil, Harrison Ford, Carrie Fisher', 1980, 124,'After      the  Rebels are overpowered by the Empire, Luke Skywalker begins his Jedi training with Yoda, while his friends are pursued         across the galaxy by Darth Vader and bounty hunter Boba Fett.','PG', 8.7);
+
+4. Create a SQL Query that displays all of the movies in the database.
+>> select * from movies
+
+5. Create a SQL Query that displays all the movies with a rating greater than 8.
+>> SELECT * FROM movies WHERE criticsRating > 8;
+
+6. Create a SQL Query that displays all the movies titles that start with a B.
+>> SELECT title FROM movies WHERE title like 'B%';
+
+7. Create a SQL Query that displays all movies that were released prior to 2000, where the rating is 8.2 or greater.
+>>  SELECT * FROM movies WHERE year < 2000 AND criticsRating >= 8.2;
+
+8. Create a SQL Query that displays all movies that were released between 1990 and 2010, with an mpaRating of 'R'.
+>>SELECT * FROM movies WHERE year BETWEEN 1990 AND 2010 AND mpaRating = 'R';
